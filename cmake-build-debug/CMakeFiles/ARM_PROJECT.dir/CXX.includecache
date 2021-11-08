@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sai/IIITHYDERABADMTECH/Mtech_3rd_semester/data_analytics/ARM_PROJECT/code/fp_tree.cpp
+bits/stdc++.h
+-
+
