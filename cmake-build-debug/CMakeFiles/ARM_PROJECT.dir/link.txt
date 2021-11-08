@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/ARM_PROJECT.dir/code/fp_tree.cpp.o -o ARM_PROJECT 

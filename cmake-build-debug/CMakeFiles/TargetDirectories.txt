@@ -1,3 +1,0 @@
-/home/sai/IIITHYDERABADMTECH/Mtech_3rd_semester/data_analytics/ARM_PROJECT/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/sai/IIITHYDERABADMTECH/Mtech_3rd_semester/data_analytics/ARM_PROJECT/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/sai/IIITHYDERABADMTECH/Mtech_3rd_semester/data_analytics/ARM_PROJECT/cmake-build-debug/CMakeFiles/ARM_PROJECT.dir
