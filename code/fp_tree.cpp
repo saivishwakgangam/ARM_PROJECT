@@ -147,7 +147,7 @@ int main(){
     fp.read_dataset("dataset.txt");
     fp.sort_transactions();
     fp.construct_fp_tree();
-
+    cout<<"HELLO";
 
     return 0;
 }
