@@ -4,11 +4,13 @@ class Node{
 public:int item_number;
        int count;
        Node* next_link;
+       Node* parent;
        map<int,Node*>children;
        Node(int val){
             item_number=val;
             count=0;
             next_link=NULL;
+            parent=NULL;
        }
 };
 class FP_TREE {
@@ -87,7 +89,7 @@ public:
             item_header[ele.second] = NULL;
         }
         reverse(item_set_freq.begin(), item_set_freq.end());
-        cout << "SORTING THE TRANSACTIONS" << transactions_size << endl;
+        cout << "SORTING THE TRANSACTIONS...." <<endl;
         for (int i = 0; i < transactions_size; i++) {
 
             vector<int> temp_vector;
@@ -129,16 +131,42 @@ public:
                 }
                 head->next_link = new_node;
             }
+            //updating parent
+            new_node->parent=root;
             root->children[element] = insert_item_list(new_node, index + 1, n, list);
         }
         return root;
     }
-
+    bool search(Node* root,int index,int n,vector<int>&list){
+        if(index==n){
+            return true;
+        }
+        int element=list[index];
+        if(!root->children.count(element)){
+            return false;
+        }
+        return search(root->children[element],index+1,n,list);
+    }
     void construct_fp_tree() {
-        cout << "CONSTRUCTING FP TREE";
+        cout << "CONSTRUCTING FP TREE"<<endl;
         //parse the transactions
         for (int i = 0; i < transactions_size; i++) {
             root = insert_item_list(root, 0, transactions[i].size(), transactions[i]);
+        }
+        //checking the code
+        cout<<"TESTING FP TREE"<<endl;
+        bool result=true;
+        for(int i=0;i<transactions_size;i++){
+            result&=search(root,0,transactions[i].size(),transactions[i]);
+            if(result==false){
+                break;
+            }
+        }
+        if(result){
+            cout<<"ALL TRANSACTIONS PRESENT";
+        }
+        else{
+            cout<<"ALL TRANSACTIONS NOT PRESENT";
         }
     }
 };
@@ -147,7 +175,5 @@ int main(){
     fp.read_dataset("dataset.txt");
     fp.sort_transactions();
     fp.construct_fp_tree();
-    cout<<"HELLO";
-
     return 0;
 }
